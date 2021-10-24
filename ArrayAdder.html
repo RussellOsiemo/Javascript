@@ -5,11 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="fontawesome6">
+    <link rel="stylesheet" href="fontawesome6\css">
+    <link rel="stylesheet" href="fontawesome6\css\all.css">
+    <link rel="stylesheet" href="fontawesome6\css\all.min.css">
+    <link rel="stylesheet" href="fontawesome6\fonts">
     <title>Array Adders</title>
 </head>
 
 <body>
-    <h1></h1>
+    <h1>Challange from Leetcode</h1>
+    <h2>Open on inspect</h2>
+    <section class="row">
+        <p class="col-md-6">Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return
+            the answer in any order. Example 1: Input: nums = [2,7,11,15], target = 9 Output: [0,1] Output: Because nums[0] + nums[1] == 9, we return [0, 1]. Example 2: Input: nums = [3,2,4], target = 6 Output: [1,2] Example 3: Input: nums = [3,3], target
+            = 6 Output: [0,1] Constraints: 2
+            <=n ums.length <=1 04 -109 <=n ums[i] <=1 09 -109 <=t arget <=1 09 Only one valid answer exists. Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?</p>
+                <div class="container">
+                    <p class="btn-info"> var nums = [2, 7, 11, 15]; var target = 9; var a = nums[Math.floor(Math.random() * nums.length)]; console.log(a); const myindex = nums.indexOf(a); if (myindex > -1) { nums.splice(myindex, 1) } console.log(nums); var b = nums[Math.floor(Math.random()
+                        * nums.length)]; console.log(b); const myindex2 = nums.indexOf(b); if (myindex2 > -1) { nums.splice(myindex2, 1) } console.log(nums); targetsum = a + b; console.log(targetsum); if (targetsum == target) { var numsArray = [2, 7,
+                        11, 15]; console.log(numsArray.indexOf(a) + " " + numsArray.indexOf(b)) } else { }
+
+                    </p>
+                </div>
+                <button class="btn-danger">Test Buttin</button>
+    </section>
     <script>
         var nums = [2, 7, 11, 15];
         var target = 9;
@@ -38,6 +59,7 @@
 
         }
     </script>
+    <script src="js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>
