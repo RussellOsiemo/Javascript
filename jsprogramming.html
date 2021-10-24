@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <title>Javascript Programming</title>
+    </head>
+    <body>
+        <h1>Object Demonstration</h1>
+          <script type="text/javascript">
+        var plan1={
+            name:"Basic",
+            price:3.99,
+            space:100,
+            transfer:1000,
+            pages:10,
+            DiscountMonths:[7,8],
+            calcAnnual:function(percentIfDisc){
+                var bestPrice = plan1.price;
+                var currDate = new Date();
+                var thisMo = currDate.getMonth();
+                for (var i=0;i<plan1.DiscountMonths.length;i++){
+                    if(plan1.DiscountMonths[i]==thisMo){
+                        bestPrice = plan1.price*percentIfDisc;
+                        break;
+                    }
+                }
+                return bestPrice * 12;
+            },
+
+        };
+        document.write("Plan Name :"+plan1.name+"<br>" +"Plan Price: "+plan1.price+"<br>"+ "Plan Space :"+plan1.space+"<br>"+"Plan Transfer Rate :"+plan1.transfer+"<br>"+"Plan Page :"+plan1.pages);
+     var calcAnnualValue= prompt("Select A rate ")
+       
+        var AnnualPrice=plan1.calcAnnual(calcAnnualValue);
+        document.write("<br> AnnualPrice = "+AnnualPrice)
+        </script>
+
+    </body>
+</HTML>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Hosting Plans</h1>
+        <script type="text/javascript" >
+             function Plan(name, price, space, transfer, pages, discountMonths) {
+                 this.name = name;
+                 this.price = price;
+                 this.space = space;
+                 this.transfer = transfer;
+                this.pages = pages;
+                 this.discountMonths = discountMonths;
+                 this.calcAnnual = function(percentIfDisc) {
+                 var bestPrice = this.price;
+                 var currDate = new Date();
+                 var thisMo = currDate.getMonth();
+                 for (var i = 0; i < this.discountMonths.length; i++) {
+                 if (this.discountMonths[i] === thisMo) {
+                 bestPrice = this.price * percentIfDisc;
+                 break;
+                 }
+                 }
+                 return bestPrice * 12;
+                 };
+                 }
+
+                  var plan1 = new Plan("Basic",3.99,10,1000,10,[7,8]);
+                  var plan2 = new Plan("Premium",5.99,500,5000,50,[7,8,11]);
+                  var plan3 = new Plan("Ultimate", 9.99, 2000, 20000, 500, [7,8]);
+                  var planCreatorName = document.getElementById("planname");
+                  var planCreatorPrice = document.getElementById("planprice");
+                  var planCreatorSpace = document.getElementById("planspace");
+                  var planCreatorTransferRate = document.getElementById("plantrate");
+                  var planCreatorPages = document.getElementById("planPages");
+
+                 // display of hosting plans data
+                 document.write("<h3>Hosting Plan 1 Data</h3> "+"<br>"+"Plan Name: "+plan1.name+"<br>"+"Plan Price: "+plan1.price+"<br>"+"Plan space: "+plan1.space+"<br>"+"Plan Transfer Rate: "+plan1.transfer+"<br>"+"Plan Pages: "+plan1.pages+"<br>");
+                var annualprice = plan1.calcAnnual(0.85);
+                document.write("Annual Price: "+annualprice);
+                 document.write("<h3>Hosting Plan 2 Data</h3> "+"<br>"+"Plan Name: "+plan2.name+"<br>"+"Plan Price: "+plan2.price+"<br>"+"Plan space: "+plan2.space+"<br>"+"Plan Transfer Rate: "+plan2.transfer+"<br>"+"Plan Pages: "+plan2.pages+"<br>");
+                 var annualprice = plan2.calcAnnual(0.85);
+                 document.write("Annual Price: "+annualprice);
+                 document.write("<h3>Hosting Plan 3 Data</h3> "+"<br>"+"Plan Name: "+plan3.name+"<br>"+"Plan Price: "+plan3.price+"<br>"+"Plan space: "+plan3.space+"<br>"+"Plan Transfer Rate: "+plan3.transfer+"<br>"+"Plan Pages: "+plan3.pages+"<br>");
+                 var annualprice = plan3.calcAnnual(0.85);
+                 document.write("Annual Price: "+annualprice);
+                 //annual Price
+                </script>
+             <!-- table -->
+                <table style="width:80%; border: 3px solid goldenrod; border-collapse: collapse ;">
+                    <th><h3>HOSTING PLAN CONFIGURATION</h3></th>
+                    
+                    <tr>
+                      <th style="border: 1px solid black;">Plan Type</th>
+                      <th style="border: 1px solid black;">Plan 1:</th>
+                      <th style="border: 1px solid black;">Plan 2:</th>
+                      <th style="border: 1px solid black;">Plan 3:</th>
+                      </tr>
+                      <tr>
+                      <th style="border: 1px solid black;">Plan Name:</th>
+                      <!-- <td>Plan 1:</td>                  -->
+                      
+                      <!-- <td class="bg bg-warning">On Review</td> -->
+                    </tr>
+                    <tr>
+                      <th style="border: 1px solid black;">Plan Price:</th>
+                      <td class="bg bg-light" style="border: 1px solid black;">Pending</td> 
+                    </tr>
+                    <tr>
+                      <th>Plan Space:</th>
+                      <td class="bg bg-light" style="border: 1px solid black;">Pending</td> 
+                      <td class="bg bg-light" style="border: 1px solid black;">Pending</td> 
+                      <td class="bg bg-light" style="border: 1px solid black;">Pending</td> 
+                      <!-- <td class="bg bg-light">Pending</td> -->
+                    </tr>
+                    <tr>
+                      <th style="border: 1px solid black;">Plan Transfer Rate:</th>
+                      <!-- <td class="bg bg-light" id="">Pending</td> -->
+                    </tr>
+                    <tr>
+                      <th style="border: 1px solid black;">Plan Pages:</th>
+                      <!-- <td class="bg bg-light">Pending</td> -->
+                    </tr>
+                    <tr>
+                      <th style="border: 1px solid black;">Plan Annual Price:</th>
+                      <!-- <td class="bg bg-light">Pending</td> -->
+                    </tr>
+                  </table>
+                  <section class="row justify-content-center">
+                    <center><h3>NEW PLAN INPUT</h3></center>
+                    <form class ="col-md-6 justify-content-center">
+                      <div class="mb-3 ">
+                        <label for="exampleInputEmail1" class="form-label">Plan Name</label>
+                        <input type="text" class="form-control" id="planname" aria-describedby="emailHelp">
+                        <div id="emailHelp" class="form-text">.</div>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Plan Price</label>
+                        <input type="text" class="form-control" id="planprice">
+                      </div>
+                      <label for="exampleInputEmail1" class="form-label">Plan Space</label>
+                      <input type="text" class="form-control" id="planspace" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Plan Transfer Rate</label>
+                      <input type="text" class="form-control" id="plantrate">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Plan Pages</label>
+                      <input type="text" class="form-control" id="planpage">
+                    </div>
+                  
+                      <button type="submit" class="btn btn-primary" onclick="">Submit</button>
+                    </form>
+                  </section>
+    </body>
+</html>

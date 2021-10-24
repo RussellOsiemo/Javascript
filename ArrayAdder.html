@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Adders</title>
+</head>
+
+<body>
+    <h1></h1>
+    <script>
+        var nums = [2, 7, 11, 15];
+        var target = 9;
+        var a = nums[Math.floor(Math.random() * nums.length)];
+        console.log(a);
+        const myindex = nums.indexOf(a);
+        if (myindex > -1) {
+            nums.splice(myindex, 1)
+        }
+        console.log(nums);
+
+        var b = nums[Math.floor(Math.random() * nums.length)];
+        console.log(b);
+        const myindex2 = nums.indexOf(b);
+        if (myindex2 > -1) {
+            nums.splice(myindex2, 1)
+        }
+        console.log(nums);
+        targetsum = a + b;
+        console.log(targetsum);
+
+        if (targetsum == target) {
+            var numsArray = [2, 7, 11, 15];
+            console.log(numsArray.indexOf(a) + " " + numsArray.indexOf(b))
+        } else {
+
+        }
+    </script>
+</body>
+
+</html>

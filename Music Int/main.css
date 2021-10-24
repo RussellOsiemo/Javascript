@@ -1,0 +1,16 @@
+.nav{
+background-color: rgb(8, 8, 63);
+text-decoration: none;
+text-decoration: aliceblue;
+max-width: max-content;
+height: 14vh;
+border-radius: 5px;
+border: 1px;
+margin-top: 0vh;
+}
+.nav ul li a{
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 200px;
+text-decoration: none;
+
+}
