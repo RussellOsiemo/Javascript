@@ -18,8 +18,12 @@
     <button class="btn-info">
      Change My Background
  </button>
+    <p class="double">
+        Double Click to Change My Background
+    </p>
     <script>
         //select the button tag
+
         const button = document.querySelector('button');
 
         function random(number) {
@@ -29,6 +33,17 @@
             const randomcolor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
             //change body color
             document.body.style.backgroundColor = randomcolor;
+        }
+        const dbButton = document.querySelector('p');
+
+        function random(number) {
+            return Math.floor(Math.random() * (number + 1))
+        }
+
+        dbButton.ondbclick = function() {
+            const randomcolor2 = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+            //change body color
+            document.body.style.backgroundColor = randomcolor2;
         }
     </script>
 </body>
