@@ -17,11 +17,25 @@
         4: Input: x = -101 Output: false
     </p>
     <script>
-        const testValue = Math.floor(Math.random());
-        var isPalindrome = function(x) {
+        /**
+         * @param {number} x
+         * @return {boolean}
+         */
 
-            console.log("Hello");
+
+        var isPalindrome = function(word) {
+            // fowardValue = 121;
+
+            fowardValueString = word.toString();
+            reverseValue = fowardValueString.split("").reverse().join("");
+            //  console.log(fowardValueString);
+            if (fowardValueString === reverseValue) {
+                return true;
+            }
+            return false;
+
         };
+        console.log(isPalindrome(121));
     </script>
 </body>
 

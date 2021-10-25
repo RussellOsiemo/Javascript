@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="carousel">
+        <div class="emojis" style="--emojis: 10;">
+            <div class="emoji" style="--emoji: 0; --delay: 0; --depth: 110;">🍭</div>
+            <div class="emoji" style="--emoji: 1; --delay: 0; --depth: 110;">😇</div>
+            <div class="emoji" style="--emoji: 2; --delay: 0; --depth: 110;">🐧</div>
+            <div class="emoji" style="--emoji: 3; --delay: 0; --depth: 110;">😂</div>
+            <div class="emoji" style="--emoji: 4; --delay: 0; --depth: 110;">💖</div>
+            <div class="emoji" style="--emoji: 5; --delay: 0; --depth: 110;">🤬</div>
+            <div class="emoji" style="--emoji: 6; --delay: 0; --depth: 110;">👺</div>
+            <div class="emoji" style="--emoji: 7; --delay: 0; --depth: 110;">👻</div>
+            <div class="emoji" style="--emoji: 8; --delay: 0; --depth: 110;">🐉</div>
+            <div class="emoji" style="--emoji: 9; --delay: 0; --depth: 110;">🐔</div>
+        </div>
+    </div>
+</body>
+<style>
+     :root {
+        --carouselDur: 4;
+        --duration: 2;
+    }
+    
+    .carousel {
+        height: 100px;
+        width: 100px;
+        -webkit-transform: translate(-50%, -50%) rotateX(-15deg) rotateY(40deg);
+        transform: translate(-50%, -50%) rotateX(-15deg) rotateY(40deg);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+    
+    .emoji {
+        animation: emoji calc(var(--duration) * 1s) calc((var(--duration) * var(--delay)) * 1s) infinite linear;
+        font-size: 2rem;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+    }
+    
+    .emojis {
+        -webkit-animation: carousel calc(var(--carouselDur) * 1s) infinite linear;
+        animation: carousel calc(var(--carouselDur) * 1s) infinite linear;
+        height: 50px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        width: 50px;
+        z-index: 5;
+    }
+    
+    @-webkit-keyframes carousel {
+        from {
+            -webkit-transform: translate(-50%, -50%) rotateY(0deg);
+            transform: translate(-50%, -50%) rotateY(0deg);
+        }
+        to {
+            -webkit-transform: translate(-50%, -50%) rotateY(360deg);
+            transform: translate(-50%, -50%) rotateY(360deg);
+        }
+    }
+    
+    @keyframes carousel {
+        from {
+            -webkit-transform: translate(-50%, -50%) rotateY(0deg);
+            transform: translate(-50%, -50%) rotateY(0deg);
+        }
+        to {
+            -webkit-transform: translate(-50%, -50%) rotateY(360deg);
+            transform: translate(-50%, -50%) rotateY(360deg);
+        }
+    }
+    
+    @-webkit-keyframes emoji {
+        0%,
+        100% {
+            -webkit-transform: translate(-50%, -50%) rotateY(calc(((-360 / var(--emojis)) * var(--emoji)) * 1deg)) translate3d(0, 0, calc(var(--depth) * 1px)) rotateY(180deg);
+            transform: translate(-50%, -50%) rotateY(calc(((-360 / var(--emojis)) * var(--emoji)) * 1deg)) translate3d(0, 0, calc(var(--depth) * 1px)) rotateY(180deg);
+        }
+        50% {
+            -webkit-transform: translate(-50%, 0) rotateY(calc(((-360 / var(--emojis)) * var(--emoji)) * 1deg)) translate3d(0, 0, calc(var(--depth) * 1px)) rotateY(180deg);
+            transform: translate(-50%, 0) rotateY(calc(((-360 / var(--emojis)) * var(--emoji)) * 1deg)) translate3d(0, 0, calc(var(--depth) * 1px)) rotateY(180deg);
+        }
+    }
+    
+    @keyframes emoji {
+        0%,
+        100% {
+            -webkit-transform: translate(-50%, -50%) rotateY(calc(((-360 / var(--emojis)) * var(--emoji)) * 1deg)) translate3d(0, 0, calc(var(--depth) * 1px)) rotateY(180deg);
+            transform: translate(-50%, -50%) rotateY(calc(((-360 / var(--emojis)) * var(--emoji)) * 1deg)) translate3d(0, 0, calc(var(--depth) * 1px)) rotateY(180deg);
+        }
+        50% {
+            -webkit-transform: translate(-50%, 0) rotateY(calc(((-360 / var(--emojis)) * var(--emoji)) * 1deg)) translate3d(0, 0, calc(var(--depth) * 1px)) rotateY(180deg);
+            transform: translate(-50%, 0) rotateY(calc(((-360 / var(--emojis)) * var(--emoji)) * 1deg)) translate3d(0, 0, calc(var(--depth) * 1px)) rotateY(180deg);
+        }
+    }
+</style>
+
+</html>
