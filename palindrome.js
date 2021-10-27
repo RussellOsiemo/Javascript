@@ -40,4 +40,4 @@ var isPalindrome = function(word) {
     return false;
 
 };
-console.log(isPalindrome(3));
+console.log(isPalindrome(33));

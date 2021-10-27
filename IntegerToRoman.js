@@ -144,10 +144,6 @@ var intToRoman = function(num) {
             something = "0"
             concatNum = something.concat(numintoString);
             break;
-            // case 4:
-            //     // something = "0"
-            //     concatNum = something.concat(numintoString);
-            //     break;
         default:
             concatNum = numintoString;
             break;
@@ -181,4 +177,4 @@ var intToRoman = function(num) {
 
     return JoinedString;
 };
-console.log(intToRoman(10));
+console.log(intToRoman(529));
