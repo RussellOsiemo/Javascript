@@ -11,4 +11,5 @@ var addStrings = function(num1, num2) {
     return sumString;
 
 };
+//for some reason i cant work out why big integers bring wrong sum yet i cant use big Integer libraries
 console.log(addStrings("1345278243172157851237875711", "120440705757766784783"));
